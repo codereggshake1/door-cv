@@ -1,0 +1,171 @@
+:root {
+    /* Maintain 1920 x 1080 aspect ratio */
+    /* (1080 / 2) = 960 */
+    --camera-width: 825px;
+    --camera-height: 620px;
+
+    --active-on-background-color: rgba(97, 255, 139, 0.95);
+    --active-on-text-color: black;
+
+    --active-off-background-color: rgba(255, 64, 64, 0.95);
+    --active-off-text-color: black;
+
+    --inactive-background-color: rgba(128, 128, 128, 0.786);
+    --inactive-text-color: rgba(255, 255, 255, 0.786);
+
+    /* Browser automatically adds margins, so you can scroll past a bit and see white margins */
+    margin: 0;
+    padding: 0;
+
+    /* border: 2px solid white; */
+}
+
+/* body > * {
+    border: 2px solid white;
+} */
+
+body {
+    /* if you use height here instead, then the gradient will be that height instead of stretching */
+    min-height: 99vh;
+    min-width: 99vw;
+    max-width: 100vw;
+    background: linear-gradient(45deg, #4b4bffdf 70%, #fcc556);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+    /* border: 2px solid white; */
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+}
+
+h1 {
+    color: white;
+    margin: 1em 0 1em;
+    min-width: 70vw;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+}
+
+.camera-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    gap: 6em;
+    margin: 0;
+}
+
+/* Left side */
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.camera-status {
+    color: white;
+    font-weight: bold;
+}
+
+.toggle-camera {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#camera {
+    width: var(--camera-width);
+    height: var(--camera-height);
+    flex-basis: var(--camera-width) var(--camera-height);
+    transform: scale(-1, 1);
+    border-radius: 5%;
+    background-color: black;
+    box-shadow: 0 8px 32px #0000004d;
+}
+
+.btn {
+    border-radius: 7%;
+    padding: 1em;
+    margin: 5px 1px;
+    font-size: 1em;
+    box-shadow: 0 4px 12px #0003;
+}
+
+.btn:disabled {
+    background-color: var(--inactive-background-color);
+    border-color: var(--inactive-background-color);
+    color: var(--inactive-text-color);
+    cursor: not-allowed;
+}
+
+.btn:enabled {
+    cursor: pointer;
+    color: oklch(11.492% 0.00001 271.152);
+    font-weight: bold;
+}
+
+.start-camera {
+    border-color: var(--active-on-background-color);
+    background-color: var(--active-on-background-color);
+}
+
+.stop-camera {
+    background-color: var(--active-off-background-color);
+    color: var(--active-off-text-color);
+}
+
+/* Right side */
+.output {
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 100;
+}
+
+.classification {
+    padding: 0px 1em;
+    margin: .3em 0px .7em;
+    background-color: #ffffff26;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.door-img {
+    height: calc(var(--camera-height) + -1*70px);
+    margin: 0px 6px 0px;
+    /* padding: 2px; */
+    background: linear-gradient(hsl(0, 6%, 97%), white);
+    border: 2px solid white;
+    border-radius: 5%;
+    box-shadow: 0 8px 32px #0000004d;
+}
+
+.hint {
+    padding: 0px 1em;
+    margin: .3em 0px .7em;
+    background-color: #ffffff26;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+}
+
+.center-text {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    margin: 0;
+}
+
+.hand {
+    font-size: 4em;
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+
+        <link rel="icon" href="kamek.png" type="x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <title> Cammic </title>
+    </head>
+
+    <body class="gradient">
+        <h1 class="title center-text"> An open hand opens many doors </h1>
+        <div class="camera-content">
+            
+            <div class="input">
+                <div class="camera-status">
+                    ⚪ Off
+                </div>
+
+                <div class="toggle-camera">
+                    <button class="btn start-camera" onClick="startCamera()"> Start Camera </button>
+                    <button class="btn stop-camera" onClick="stopCamera()" disabled> Stop Camera </button>
+                </div>
+                
+                <video id="camera"></video>
+            </div>
+
+            <div class="output">
+                <div class="classification">
+                    <p class="center-text" id="confidence"> Confidence: 100% </p>
+                    <p class="center-text hand" id="hand"> 👊 </p>
+                </div>
+
+                <div class="door">
+                    <img src="closed-door.png" alt="brown closed door" class="door-img">
+                </div>
+
+            </div>
+        </div>
+
+        <script src="tf.min.js"></script>
+        <script src="teachablemachine-image.min.js"></script>
+        <script src="camera.js"></script>
+
+    </body>
+</html>
